@@ -27,6 +27,12 @@ jQuery( function( $ ) {
 	  			if ( ++index == active  )
 	  				$( this ).find( 'a' ).addClass( 'current' );
 	  		});
+	  		$( 'ul.page-numbers' ).find( 'a.next' ).parent().show();
+	  		$( 'ul.page-numbers' ).find( 'a.prev' ).parent().show();
+	  		if ( index == active )
+	  			$( 'ul.page-numbers' ).find( 'a.next' ).parent().hide();
+	  		else if ( active == 1 )
+	  			$( 'ul.page-numbers' ).find( 'a.prev' ).parent().hide();
 	  		history.replaceState(null, null,  $href );
 		});
 	}
